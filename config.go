@@ -5,8 +5,10 @@ import (
 	"regexp"
 )
 
+var OpenaiAPIURLv1 = "https://api.openai.com/v1"
+
 const (
-	openaiAPIURLv1                 = "https://api.openai.com/v1"
+	//openaiAPIURLv1                 = "https://api.openai.com/v1"
 	defaultEmptyMessagesLimit uint = 300
 
 	azureAPIPrefix         = "openai"
@@ -44,7 +46,7 @@ type ClientConfig struct {
 func DefaultConfig(authToken string) ClientConfig {
 	return ClientConfig{
 		authToken:        authToken,
-		BaseURL:          openaiAPIURLv1,
+		BaseURL:          OpenaiAPIURLv1,
 		APIType:          APITypeOpenAI,
 		AssistantVersion: defaultAssistantVersion,
 		OrgID:            "",
